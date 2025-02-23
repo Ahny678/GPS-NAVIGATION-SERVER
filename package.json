@@ -1,0 +1,24 @@
+{
+  "name": "gps-navigation-server",
+  "version": "1.0.0",
+  "description": "An express.js server for calculating routes and communicating with an esp32",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ahny678/GPS-NAVIGATION-SERVER.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ahny678/GPS-NAVIGATION-SERVER/issues"
+  },
+  "homepage": "https://github.com/Ahny678/GPS-NAVIGATION-SERVER#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}
