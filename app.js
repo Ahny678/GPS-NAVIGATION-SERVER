@@ -2,19 +2,41 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-
-// Define a simple route
-app.get('/', (req, res) => {
-    res.render('index'); 
-});
-
-// Start the server
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
-
+// var createError = require("http-errors");
+// var path = require("path");
+// var cookieParser = require("cookie-parser");
+// var logger = require("morgan");
 
 // Configure Express to look for .html files
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
+var indexRouter = require("./routes/index");
+
+app.use("/",indexRouter);
+
+
+
+
+
+
+
+
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+    next(createError(404));
+  });
+  
+  // error handler
+  app.use(function (err, req, res, next) {
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get("env") === "development" ? err : {};
+  
+    // render the error page
+    res.status(err.status || 500);
+    res.render("error");
+  });
+  
+  module.exports = app;
+  
